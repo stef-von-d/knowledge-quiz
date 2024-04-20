@@ -1,3 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
-    background: pink
+    background: rgb(30, 156, 156);
+}
+
+.game-area {
+    width: 85%;
+    max-width: 800px;
+    margin: 100px auto 0 ;
+    border-radius: 20px;
+    padding: 40px;
 }
