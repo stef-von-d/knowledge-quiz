@@ -1,18 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
     box-sizing: border-box;
 }
 
-
 body {
-    background: rgb(30, 156, 156);
+    background-color: azure;
+    font-family: 'Roboto Mono' sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
 }
 
-.game-area {
-    width: 85%;
-    max-width: 800px;
-    margin: 100px auto 0 ;
-    border-radius: 20px;
-    padding: 40px;
+.quiz-container{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px black;
+    width: 500px;
+    overflow: hidden;
+}
+
+.quiz-top {
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin: 1rem  0;
+}
+
+ul li label  {
+    cursor: pointer;
+}
+
+button{
+    background-color:greenyellow;
+    color: black;
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: 2rem;    
+}
+
+button:hover{
+    background-color: green;
 }

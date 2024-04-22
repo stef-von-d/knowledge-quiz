@@ -11,25 +11,35 @@
 
 <body>
 
-    <h1 class="heading">General Knowleadge Quiz</h1>
-    <div class="container">
-        <div id="question-container" class="hide">
-        <div id="question">Question</div>
-        <div id="answer-buttons" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-top">
+            <h2 id="question">Quiz Test</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for "a" id="a_text">Answer</label>
+                </li>
+        
 
-        </div>
+            <li>
+                <input type="radio" name="answer" id="b" class="answer">
+                <label for "b" id="b_text">Answer</label>
+            </li>
+
+            <li>
+                <input type="radio" name="answer" id="c" class="answer">
+                <label for "c" id="c_text">Answer</label>
+            </li>
+
+            <li>
+                <input type="radio" name="answer" id="d" class="answer">
+                <label for "d" id="d_text">Answer</label>
+            </li> 
         </div>
 
-
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn hide">Next</button>
-        </div>
+        <button id="submit">Submit</button>
     </div>
+
 
     <script src="assets/js/script.js"></script>
 </body>
