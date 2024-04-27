@@ -1,73 +1,101 @@
-
-const questions = [
-    { 
-        question: "Which language has the more native speakers?" ,
-        answers: [
-            {text: "English" , correct: false}, 
-            {text: "Spanish", correct: true}, 
-            {text: "French" , correct: false}, 
-            {text:"Chinese" , correct: false},
-        ]
-    },
+const quizData = [
     {
-        question: "What is the capital of Romania?", 
-        answers: [
-            {text: "London", correct: false},
-            {text:"Paris" , correct: false},
-            {text:"Barcelona", correct: false},
-            {text: "Bucharest", correct: true},
-        ]
+        question: "Who is the capital of Romania?" ,
+            a: "Bucharest" ,
+            b: "Paris" ,
+            c: "Rome" , 
+            d: "Madrid", 
+            correct: "a" ,
     },
 
     {
-        question:"How many planets are in the solar system?",
-        answers: [
-            {text: "8", correct: true},
-            {text:"5", correct: false}, 
-            {text:"10", correct: false},
-            {text:"9", correct: false},
-        ]
+        question: "What is the most spoken language in the world?",
+            a: "English", 
+            b: "Spanish" , 
+            c: "Italian" , 
+            d: "Chinese", 
+            correct: "b" ,
+    } ,
+
+    {
+        question: "What is the tallest animal in the world?" , 
+            a: "Whales", 
+            b: "Elephant", 
+            c: "Giraffes", 
+            d: "Dogs", 
+            correct: "c" ,
     },
 
     {
-        question: "What does CSS stands for?" , 
-        answers: [
-            {text:"Cascading Style Sheets", correct: true}, 
-            {text:"Creative Style Sheets" , correct: false},
-            {text:"Computer Style Sheets" , correct: false},
-            {text:"Colorful Style Sheets", correct: false},
-        ]
-    }
+        question: "What is the biggest continent?" ,
+            a: "Europe", 
+            b: "Africa", 
+            c: "North America", 
+            d:"Asia" ,
+            correct:"d"  ,
+    },
+
 ];
 
-const questionElement = document.getElementbyId("question");
-const a_text = document.getElementById('a_text');
-const b_text = document.getElementById('b_text');
-const c_text = document.getElementById('c_text');
-const d_text = document.getElementById('d_text');
-const nextButton= document.getElementById("next-btn");
+const quiz= document.getElementById('quiz')
+const answerEls = document.querySelectorAll('.answer')
+const questionEl = document.getElementById('question')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const submitBtn = document.getElementById('submit')
 
-let current questionIndex= 0;
-let score= 0;
 
-function startQuiz() {
-    currentQuestionIndex= 0;
-    score= 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
+let currentQuiz= 0
+let score =0 
+
+loadQuiz()
+
+function loadQuiz() {
+
+    deselectAnswers()
+    const currentQuizData = quizData[currentQuiz]
+
+    questionEl.innerText = currentQuizData.question
+    a_text.innerText =  currentQuizData.a
+    b_text.innerText =  currentQuizData.b
+    c_text.innerText =  currentQuizData.c
+    d_text.innerText =  currentQuizData.d
 }
 
-function showQuestion () {
-    let currentQuestion = questions [currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question; 
-    
-    currentQuestion.answers.forEach(answers =>{
-        const button= document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButton.appendChild(button);
-
-    });
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false)
 }
-startQuiz();
+
+function getSelected() {
+    let answer
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+
+    return answer
+}
+
+submitBtn.addEventListener('click' , () =>  { const answer = getSelected()
+    if (answer) {
+        if(answer === quizData[currentQuiz].correct)  {
+            score++
+        }
+
+        currentQuiz++
+        
+        if(currentQuiz < quizData.length) {
+            loadQuiz()
+        } else {
+            quiz.innerHTML = `
+            <h2>You answered ${score}/${quizData.length} questions right!</h2>
+
+            <button onclick="location.refresh()">Start again!</button>
+            `
+        }
+
+        }
+})
