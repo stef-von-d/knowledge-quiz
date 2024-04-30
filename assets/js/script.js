@@ -78,8 +78,8 @@ function getSelected() {
 
     return answer;
 }
-console.log(next-btn)
-    next-btn.addEventListener('click' , () =>  { const answer = getSelected();
+//console.log(next-btn)
+   document.getElementById("next-btn").addEventListener('click' , () =>  { const answer = getSelected();
     if (answer) {
         if(answer === quizData[currentQuiz].correct)  {
             score++;
