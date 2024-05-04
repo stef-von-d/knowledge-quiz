@@ -181,7 +181,7 @@ document.getElementById("next-btn").addEventListener('click', () => {
             quiz.innerHTML = `
             <h2>You answered ${score}/${quizData.length} questions right!</h2>
 
-            <button onclick="location.refresh()">Start again!</button>
+            <button onclick="location.refresh()">Good Job!</button>
             `;
         }
 
