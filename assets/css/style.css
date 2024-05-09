@@ -1,30 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 
 *{
     box-sizing: border-box;
 }
 
-li {
-    font-size: smaller;
-}
-
-
-.div_a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border: 2px solid black;
-    margin-top: 10px;
-    padding: 0px 10px;
-
-
-}
-
 
 body {
-    background-color: purple;
-    font-family: 'Roboto+Mono', sans-serif;
+    background-color: lightgoldenrodyellow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,10 +21,7 @@ body {
     box-shadow: 0 0 10px 2px black;
     width: 500px;
     overflow: hidden;
-    display: none;
- 
 }
-
 
 .quiz-top {
     padding: 2rem;
@@ -64,7 +43,6 @@ ul li label  {
     cursor: pointer;
 }
 
-
 button{
     background-color:greenyellow;
     color: black;
@@ -77,3 +55,4 @@ button{
 button:hover{
     background-color: green;
 }
+
