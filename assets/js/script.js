@@ -151,6 +151,16 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d;
 }
 
+function togglePopup() {
+    var element= document.getElementById("mydiv");
+    if (element.style.display ==="none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+
+
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false);
 }
