@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Meta tags-->
     <meta name="description" content="Play knowledge general quiz">
     <meta name="keywords" content="quiz , game, answers, question, general, knowledge, ">
 
@@ -15,10 +16,25 @@
 
 </head>
 <body>
+    <a href="index.html"></a>
+    
+    
+    <button id="openModal">Open Modal</button>
 
-    <div class="quiz-container" id="quiz">
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p> Instructions</p>
+        <p>1. </p>
+      </div>
+    </div>
+    
+
+
+         <div class="quiz-container" id="quiz">
         <div class="quiz-top">
             <h2 id="question">Quiz Test</h2>
+
 
             <!--Create the Quiz List-->
 
@@ -48,6 +64,8 @@
         <!--Button-->
         <button id="next-btn">Next</button>
     </div>
+
+
 
     <script src="assets/js/script.js"></script>
 </body>

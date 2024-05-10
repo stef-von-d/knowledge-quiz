@@ -124,6 +124,7 @@ const quizData = [{
 
 ];
 
+
 const quiz = document.getElementById('quiz');
 const answerEls = document.querySelectorAll('.answer');
 const questionEl = document.getElementById('question');
@@ -133,10 +134,28 @@ const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 const submitBtn = document.getElementById('next-btn');
 
+
+
 let currentQuiz = 0;
 let score = 0;
 
 loadQuiz();
+
+
+document.getElementById('openModal').addEventListener('click', function() {
+    document.getElementById('myModal').style.display = "block";
+  });
+  
+  document.getElementsByClassName('close')[0].addEventListener('click', function() {
+    document.getElementById('myModal').style.display = "none";
+  });
+  
+  window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('myModal')) {
+      document.getElementById('myModal').style.display = "none";
+    }
+  });
+  
 
 function loadQuiz() {
 deselectAnswers();
