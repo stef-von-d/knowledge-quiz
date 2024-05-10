@@ -15,23 +15,34 @@
     <title>General Knowleadge Quiz Game</title>
 
 </head>
+
 <body>
     <a href="index.html"></a>
-    
-    
-    <button id="openModal">Open Modal</button>
+
+
+    <button id="openModal">Start Quiz</button>
 
     <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p> Instructions</p>
-        <p>1. </p>
-      </div>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3> Quiz's Instructions</h3>
+            <p>1. You have 15 seconds to answer each question!</p>
+            <p>2. Your score will be shown after you have answered all the questions!</p>
+            <p>3.You can't go back to the previous question to change your answer!</p>
+            <p>4. No cheating!</p>
+            <p>Good luck and have fun! It is all about the learning journey!</p>
+
+
+            <div id="timer">Time Left: <span id="time">15</span> seconds</div>
+
+
+
+        </div>
     </div>
-    
 
 
-         <div class="quiz-container" id="quiz">
+
+    <div class="quiz-container" id="quiz">
         <div class="quiz-top">
             <h2 id="question">Quiz Test</h2>
 
@@ -71,4 +82,3 @@
 </body>
 
 </html>
-

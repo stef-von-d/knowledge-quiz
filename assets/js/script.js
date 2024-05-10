@@ -138,23 +138,29 @@ const submitBtn = document.getElementById('next-btn');
 
 let currentQuiz = 0;
 let score = 0;
+let timeLeft= 15;
+let timer;
 
 loadQuiz();
 
-
 document.getElementById('openModal').addEventListener('click', function() {
     document.getElementById('myModal').style.display = "block";
+    displayQuestion();
+    startTimer();
   });
   
   document.getElementsByClassName('close')[0].addEventListener('click', function() {
     document.getElementById('myModal').style.display = "none";
+    resetTimer();
   });
   
   window.addEventListener('click', function(event) {
     if (event.target == document.getElementById('myModal')) {
       document.getElementById('myModal').style.display = "none";
+      resertTimer();
     }
   });
+
   
 
 function loadQuiz() {
@@ -189,6 +195,12 @@ if (answer) {
     if (answer === quizData[currentQuiz].correct) {
         score++;
     }
+
+    function resetTimer() {
+        clearInterval(timer);
+        timeLeft = 30;
+        document.getElementById('time').textContent = timeLeft;
+      }
 
     currentQuiz++;
 
