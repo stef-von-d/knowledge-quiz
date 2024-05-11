@@ -223,8 +223,6 @@ const quizData = [
         score++;
       }
   
-      
-  
       currentQuiz++;
   
       if (currentQuiz < quizData.length) {

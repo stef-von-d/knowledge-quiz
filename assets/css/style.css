@@ -14,7 +14,7 @@ body {
     overflow: hidden;
     margin: 0;
 }
-  
+  /*
 .modal {
     display: none;
     position: fixed;
@@ -44,7 +44,7 @@ body {
 .close:hover, .close:focus {
     color: black;
     text-decoration: none;
-}
+}*/
 
 .quiz-container{
     background-color: white; 
@@ -87,3 +87,13 @@ button:hover{
     background-color: green;
 }
 
+.container {
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+    section {
+        margin: 0 10%;
+    }
+}
